@@ -3223,7 +3223,7 @@ Bird.prototype.constructor = Bird;
 					document.body.style.backgroundImage = "-webkit-canvas("+canvasId+")";
 					document.body.style.backgroundAttachment = "fixed";
 					document.body.style.backgroundPosition = "center top"
-					document.body.style.backgroundSize = "cover"
+					
 					return document.getCSSCanvasContext("2d",  canvasId ,window.innerWidth, window.innerHeight);
 				}
 			}
@@ -3245,7 +3245,7 @@ Bird.prototype.constructor = Bird;
 
 		camera.aspect = window.innerWidth / window.innerHeight;
 		camera.updateProjectionMatrix();
-
+		document.body.style.backgroundSize = window.innerWidth + "px " + window.innerHeight + "px"
 		renderer.setSize(window.innerWidth, window.innerHeight);
 
 	}

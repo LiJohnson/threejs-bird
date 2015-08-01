@@ -3221,6 +3221,9 @@ Bird.prototype.constructor = Bird;
 				getContext:function(){
 					var canvasId = "canvas";
 					document.body.style.backgroundImage = "-webkit-canvas("+canvasId+")";
+					document.body.style.backgroundAttachment = "fixed";
+					document.body.style.backgroundPosition = "center top"
+					document.body.style.backgroundSize = "cover"
 					return document.getCSSCanvasContext("2d",  canvasId ,window.innerWidth, window.innerHeight);
 				}
 			}

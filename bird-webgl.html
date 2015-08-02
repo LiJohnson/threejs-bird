@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://threejs.org/examples/webgl_gpgpu_birds.html#64 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>three.js webgl - gpgpu - flocking</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<style>
+	body{
+		background-image: -webkit-canvas(test);
+	}
+</style>
+</head>
+	<body>
+		<script type="text/javascript">
+		(function(){
+			"use strict";
+			var xhr = new XMLHttpRequest();
+			xhr.onload = function(e){ 
+				var div = document.createElement("div");
+				var script = document.createElement("script");
+
+				div.innerHTML = xhr.response;
+				document.body.appendChild(div);
+
+				script.src = "bird.webgl.js";
+				document.body.appendChild(script)
+			};
+			xhr.open("GET","shader.script");
+			xhr.send();
+
+		})();
+		</script>
+		<script src="bird.webgl.js" ></script>
+	</body>
+</html>

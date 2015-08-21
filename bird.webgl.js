@@ -1229,7 +1229,6 @@ c);e.bind(this.domElement,"transitionend",c);e.bind(this.domElement,"oTransition
 	}
 
 	if (!Detector.webgl) Detector.addGetWebGLMessage();
-	var context = document.getCSSCanvasContext("webgl", "test", window.innerWidth, window.innerHeight);
 
 	var hash = document.location.hash.substr(1);
 	if (hash) hash = parseInt(hash, 0);
@@ -1371,10 +1370,16 @@ c);e.bind(this.domElement,"transitionend",c);e.bind(this.domElement,"oTransition
 		scene.fog = new THREE.Fog(0xffffff, 100, 1000);
 
 		renderer = new THREE.WebGLRenderer({
-			context: context
+			context: (function(){
+				var canvasId = "canvas";
+				document.body.style.backgroundImage = "-webkit-canvas("+canvasId+")";
+				document.body.style.backgroundAttachment = "fixed";
+				document.body.style.backgroundPosition = "center top"
+				return document.getCSSCanvasContext("webgl", canvasId, window.innerWidth, window.innerHeight);
+			})()
 		});
 		renderer.setClearColor(scene.fog.color);
-		renderer.setPixelRatio(window.devicePixelRatio);
+		//renderer.setPixelRatio(window.devicePixelRatio);
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		container.appendChild(renderer.domElement);
 

@@ -3229,7 +3229,7 @@ Bird.prototype.constructor = Bird;
 			}
 		});
 		renderer.setClearColor(0xffffff);
-		renderer.setPixelRatio(window.devicePixelRatio);
+		//renderer.setPixelRatio(window.devicePixelRatio);
 		renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 		document.addEventListener('mousemove', onDocumentMouseMove, false);

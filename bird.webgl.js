@@ -1381,7 +1381,7 @@ c);e.bind(this.domElement,"transitionend",c);e.bind(this.domElement,"oTransition
 		renderer.setClearColor(scene.fog.color);
 		//renderer.setPixelRatio(window.devicePixelRatio);
 		renderer.setSize(window.innerWidth, window.innerHeight);
-		container.appendChild(renderer.domElement);
+		//container.appendChild(renderer.domElement);
 
 		simulator = new SimulationRenderer(WIDTH, renderer);
 		simulator.init();
